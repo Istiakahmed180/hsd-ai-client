@@ -23,7 +23,7 @@ const AdminSendHistory = () => {
   const handleDeleteData = async (id) => {
     try {
       const deletingData = await axios.delete(
-        `http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/send/delete-send-history/${id}`
+        `http://13.229.77.43/api/send/delete-send-history/${id}`
       );
       const data = await deletingData.data;
       const filter = sendingData?.filter((data) => data?._id !== id);
@@ -40,7 +40,7 @@ const AdminSendHistory = () => {
       try {
         setLoading(true);
         const getAllSendingHistory = await axios.get(
-          "http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/send/all-send-history"
+          "http://13.229.77.43/api/send/all-send-history"
         );
         const data = getAllSendingHistory.data;
         setTimeout(() => {

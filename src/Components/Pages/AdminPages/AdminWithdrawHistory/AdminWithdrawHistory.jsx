@@ -14,7 +14,7 @@ const AdminWithdrawHistory = () => {
   const handleWithdrawRequestDelete = async (id) => {
     try {
       const deleteWithdrawData = await axios.delete(
-        `http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/withdraw/delete-withdraw-approved-request/${id}`
+        `http://13.229.77.43/api/withdraw/delete-withdraw-approved-request/${id}`
       );
       const data = await deleteWithdrawData.data;
 
@@ -32,7 +32,7 @@ const AdminWithdrawHistory = () => {
       try {
         setLoading(true);
         const getApprevedWithdrawData = await axios.get(
-          "http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/withdraw/get-approve-withdraw-request"
+          "http://13.229.77.43/api/withdraw/get-approve-withdraw-request"
         );
         const data = await getApprevedWithdrawData.data;
         setTimeout(() => {

@@ -8,7 +8,7 @@ const RecentUsers = () => {
 
   useEffect(() => {
     axios
-      .get("http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/auth/recent-users")
+      .get("http://13.229.77.43/api/auth/recent-users")
       .then((res) => {
         setRecentUsers(res.data.data);
       })

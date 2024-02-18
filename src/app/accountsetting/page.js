@@ -49,7 +49,7 @@ const AccountSetting = () => {
 
     axios
       .put(
-        `http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/auth/update-profile/${user?._id}`,
+        `http://13.229.77.43/api/auth/update-profile/${user?._id}`,
         updateProfile
       )
       .then((res) => {

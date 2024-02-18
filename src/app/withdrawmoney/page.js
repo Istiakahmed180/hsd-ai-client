@@ -36,7 +36,7 @@ const WithdrawMoney = () => {
   const sendWithdrawRequest = async (userInfo) => {
     try {
       const saveWithdrawRequest = await axios.post(
-        "http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/withdraw/add-withdraw-request",
+        "http://13.229.77.43/api/withdraw/add-withdraw-request",
         userInfo
       );
       const data = await saveWithdrawRequest.data;
@@ -56,7 +56,7 @@ const WithdrawMoney = () => {
       try {
         setLoading(true);
         const userWithdrawHistory = await axios.get(
-          `http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/withdraw/get-user-withdraw-history?email=${user?.email}`
+          `http://13.229.77.43/api/withdraw/get-user-withdraw-history?email=${user?.email}`
         );
         const data = await userWithdrawHistory.data;
         setTimeout(() => {

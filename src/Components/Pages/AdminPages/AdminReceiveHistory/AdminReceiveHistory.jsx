@@ -20,7 +20,7 @@ const AdminReceiveHistory = () => {
   const handleReceivingDataDelete = async (id) => {
     try {
       const deletetingData = await axios.delete(
-        `http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/received/delete-receive-data/${id}`
+        `http://13.229.77.43/api/received/delete-receive-data/${id}`
       );
       const data = await deletetingData.data;
 
@@ -38,7 +38,7 @@ const AdminReceiveHistory = () => {
       try {
         setLoading(true);
         const GetAllRecievingData = await axios.get(
-          "http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/received/all-receive-data"
+          "http://13.229.77.43/api/received/all-receive-data"
         );
         const data = await GetAllRecievingData.data;
         setTimeout(() => {
