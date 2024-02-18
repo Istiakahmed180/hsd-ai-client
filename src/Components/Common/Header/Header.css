@@ -1,0 +1,23 @@
+.toggle-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #007bff;
+  cursor: pointer;
+  color: #fff;
+}
+
+.toggle-button svg {
+  color: #333;
+}
+
+.toggle-button.clicked {
+  background-color: #007bff;
+}
+
+.toggle-button.clicked svg {
+  color: #fff;
+}
