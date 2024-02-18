@@ -22,7 +22,7 @@ const AdminUserList = () => {
   const handleUsersDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `http://13.229.77.43/api/auth/delete-user/${id}`
+        `http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/auth/delete-user/${id}`
       );
       const data = await response.data;
       if (data.success) {
@@ -38,7 +38,7 @@ const AdminUserList = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://13.229.77.43/api/auth/all-users")
+      .get("http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/auth/all-users")
       .then((res) => {
         setTimeout(() => {
           setAllUser(res.data.users);

@@ -32,7 +32,7 @@ const AddMoney = () => {
 
     axios
       .post(
-        "http://13.229.77.43/api/invest/add-client",
+        "http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/invest/add-client",
         clientData
       )
       .then((res) => {
@@ -53,7 +53,7 @@ const AddMoney = () => {
       try {
         setLoading(true);
         const userInvestmentData = await axios.get(
-          `http://13.229.77.43/api/invest/get-user-investment-data?email=${user?.email}`
+          `http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/invest/get-user-investment-data?email=${user?.email}`
         );
         const data = await userInvestmentData.data;
         setTimeout(() => {

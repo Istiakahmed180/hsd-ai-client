@@ -31,7 +31,7 @@ const UserSendMoney = () => {
 
     try {
       const fetchingData = await axios.post(
-        `http://13.229.77.43/api/invest/transfer-amount`,
+        `http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/invest/transfer-amount`,
         sendAmount
       );
       const data = await fetchingData.data;
@@ -76,7 +76,7 @@ const UserSendMoney = () => {
   const handelSendingHistoryData = async (senderHistoryData) => {
     try {
       const fetcingSendingHistory = await axios.post(
-        "http://13.229.77.43/api/send/add-send-history",
+        "http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/send/add-send-history",
         senderHistoryData
       );
       const data = await fetcingSendingHistory.data;
@@ -88,7 +88,7 @@ const UserSendMoney = () => {
   const handleReceivingHistoryData = async (receiverHistoryData) => {
     try {
       const fetchingReceivingHistory = await axios.post(
-        "http://13.229.77.43/api/received/add-receive-data",
+        "http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/received/add-receive-data",
         receiverHistoryData
       );
       const data = await fetchingReceivingHistory.data;
@@ -102,7 +102,7 @@ const UserSendMoney = () => {
       try {
         setLoading(true);
         const getUserSendHistory = await axios.get(
-          `http://13.229.77.43/api/send/get-user-send-history?email=${user?.email}`
+          `http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/send/get-user-send-history?email=${user?.email}`
         );
         const data = await getUserSendHistory.data;
 

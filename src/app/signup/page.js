@@ -74,7 +74,7 @@ const SignUp = () => {
 
       axios
         .post(
-          "http://13.229.77.43/api/auth/register",
+          "http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/auth/register",
           userInfoData
         )
         .then((res) => {

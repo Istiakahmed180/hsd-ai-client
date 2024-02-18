@@ -19,7 +19,7 @@ const AdminClientList = () => {
   const handleClientDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `http://13.229.77.43/api/invest/delete-client/${id}`
+        `http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/invest/delete-client/${id}`
       );
       const data = await response.data;
       if (data.success) {
@@ -35,7 +35,7 @@ const AdminClientList = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://13.229.77.43/api/invest/all-client")
+      .get("http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/invest/all-client")
       .then((res) => {
         setTimeout(() => {
           setAllClient(res.data);

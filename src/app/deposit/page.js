@@ -20,7 +20,7 @@ const Deposit = () => {
   const handleWithdrawDeposit = async (id) => {
     try {
       const withdrawAmount = await axios.put(
-        `http://13.229.77.43/api/deposit/withdraw-deposit-money?id=${id}`
+        `http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/deposit/withdraw-deposit-money?id=${id}`
       );
       const data = await withdrawAmount.data;
       if (data?.type === true) {
@@ -54,7 +54,7 @@ const Deposit = () => {
   const sendingDepositData = async (userData) => {
     try {
       const sendData = await axios.post(
-        "http://13.229.77.43/api/deposit/add-deposit-transaction",
+        "http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/deposit/add-deposit-transaction",
         userData
       );
       const data = await sendData.data;
@@ -74,7 +74,7 @@ const Deposit = () => {
       setLoading(true);
       try {
         const userDepositData = await axios.get(
-          `http://13.229.77.43/api/deposit/get-deposit-transaction?email=${user?.email}`
+          `http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/deposit/get-deposit-transaction?email=${user?.email}`
         );
         const data = await userDepositData.data;
         setTimeout(() => {

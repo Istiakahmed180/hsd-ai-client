@@ -11,7 +11,7 @@ const AdminInvestRequest = () => {
   const handleApprovedData = async (id) => {
     try {
       const fetchApprovedData = await axios.put(
-        `http://13.229.77.43/api/invest/admin/approve/${id}`
+        `http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/invest/admin/approve/${id}`
       );
       const data = await fetchApprovedData.data;
       if (data) {
@@ -28,7 +28,7 @@ const AdminInvestRequest = () => {
   const handleInvestRequestDelete = async (id) => {
     try {
       const fetchDeletetingData = await axios.delete(
-        `http://13.229.77.43/api/invest/admin/invest-request-delete/${id}`
+        `http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/invest/admin/invest-request-delete/${id}`
       );
       const data = await fetchDeletetingData?.data;
 
@@ -48,7 +48,7 @@ const AdminInvestRequest = () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          "http://13.229.77.43/api/invest/admin/invest-request"
+          "http://ec2-13-229-77-43.ap-southeast-1.compute.amazonaws.com/api/invest/admin/invest-request"
         );
         const data = await response?.data;
         setTimeout(() => {
